@@ -3,7 +3,7 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-# Hello, world!
+## Hello, world!
 
 This is a hello world.
 
