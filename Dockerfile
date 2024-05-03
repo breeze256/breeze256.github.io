@@ -13,4 +13,5 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && adduser -S breeze256 -u 1000 -D -G users \
     && echo 'breeze256 ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+WORKDIR /docs
 USER breeze256
