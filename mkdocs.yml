@@ -21,7 +21,7 @@ theme:
     code: Fira Mono
   icon: 
     logo: material/star-shooting-outline
-    repo: fontawesome/brands/github
+    repo: fontawesome/brands/git-alt
   favicon: assets/images/favicon.png
   palette:
     primary: white
