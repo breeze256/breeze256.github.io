@@ -14,10 +14,10 @@ theme:
     text: Noto Sans SC
     code: Fira Mono
   icon: 
-    logo: material/account-school-outline
+    logo: material/star-shooting-outline
   palette:
-    primary: teal
-    accent: teal
+    primary: white
+    accent: indigo
   features:
     - navigation.instant
     - navigation.tabs
