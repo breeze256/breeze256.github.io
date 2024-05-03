@@ -1,7 +1,7 @@
-# Welcome to Breeze256's Blog
-## Work In Progress
+# 主页
+## 欢迎来到 Breeze256 的博客
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Thanks for your visit. : )
 
 ## Hello, world!
 
@@ -12,6 +12,7 @@ This is a hello world.
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
+* `mkdocs gh-deploy` - Update GitHub Pages.
 * `mkdocs -h` - Print help message and exit.
 
 ## Project layout
@@ -20,3 +21,5 @@ This is a hello world.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+    site/
+        ...       # Website resource files.

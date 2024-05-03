@@ -1,5 +1,26 @@
 site_name: Breeze256's Blog
 site_url: https://breeze256.github.io/
 site_author: Breeze256
+nav:
+  - 主页: index.md
+  - section1: 
+    - test1: section1/test1.md
+    - test2: section1/test2.md
+
 theme: 
   name: 'material'
+  language: zh
+  font: 
+    text: Noto Sans SC
+    code: Fira Mono
+  icon: 
+    logo: material/account-school-outline
+  palette:
+    primary: teal
+    accent: teal
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+plugins:
+  - search
