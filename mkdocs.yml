@@ -1,6 +1,7 @@
 site_name: Breeze256's Blog
 site_url: https://breeze256.github.io/
 site_author: Breeze256
+repo_url: https://github.com/breeze256/breeze256.github.io
 
 # Contents
 nav:
@@ -19,6 +20,7 @@ theme:
     code: Fira Mono
   icon: 
     logo: material/star-shooting-outline
+    repo: fontawesome/brands/github
   favicon: assets/images/favicon.png
   palette:
     primary: white
