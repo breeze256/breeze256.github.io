@@ -2,7 +2,9 @@ site_name: Breeze256's Blog
 site_url: https://breeze256.github.io/
 site_author: Breeze256
 nav:
-  - 主页: index.md
+  - 主页: 
+    - Getting Started: "主页/#1Getting Started.md"
+    - F.A.Q.:  "主页/#2F.A.Q.md"
   - section1: 
     - test1: section1/test1.md
     - test2: section1/test2.md
@@ -15,6 +17,7 @@ theme:
     code: Fira Mono
   icon: 
     logo: material/star-shooting-outline
+  favicon: assets/images/favicon.png
   palette:
     primary: white
     accent: indigo

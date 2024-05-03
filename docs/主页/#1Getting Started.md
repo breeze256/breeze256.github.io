@@ -1,4 +1,4 @@
-# 主页
+# Getting Started
 ## 欢迎来到 Breeze256 的博客
 
 Thanks for your visit. : )
