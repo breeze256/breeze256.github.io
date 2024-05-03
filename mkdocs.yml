@@ -1,10 +1,12 @@
 site_name: Breeze256's Blog
 site_url: https://breeze256.github.io/
 site_author: Breeze256
+
+# Contents
 nav:
   - 主页: 
-    - Getting Started: "主页/#1Getting Started.md"
-    - F.A.Q.:  "主页/#2F.A.Q.md"
+    - Getting Started: index.md
+    - F.A.Q.:  home/F_A_Q.md
   - section1: 
     - test1: section1/test1.md
     - test2: section1/test2.md
