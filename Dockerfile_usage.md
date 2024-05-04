@@ -4,7 +4,10 @@
 `docker build -t breeze256-blog:latest .`
 
 ### Step 2: Run the image
-`docker run -it -v /home/breeze256/breeze256.github.io:/docs -v /home/breeze256/Documents/ssh:/ssh breeze256-blog /bin/ash`
+`docker run -it -v YOUR_REPO_PATH:/docs -v YOUR_SSH_PATH:/ssh breeze256-blog /bin/ash`
 
-### Addtiton: Enter the container
-`docker exec -it -u breeze256 CONTAINER_NAME /bin/ash`
+### Addtiton 1: Enter the container
+`docker exec -it CONTAINER_NAME /bin/ash`
+
+### Addition 2: Install dependences
+excute `instl_deps.sh` under the /docs path.

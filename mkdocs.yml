@@ -9,9 +9,9 @@ nav:
   - 主页: 
     - Getting Started: index.md
     - F.A.Q.:  home/F_A_Q.md
-  - section1: 
-    - test1: section1/test1.md
-    - test2: section1/test2.md
+  - 关于: 
+    - test1: about/test1.md
+    - test2: about/test2.md
 
 theme: 
   name: 'material'

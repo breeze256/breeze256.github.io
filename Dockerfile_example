@@ -3,7 +3,7 @@ FROM alpine
 LABEL org.breeze256-blog.image.author="18980896953@163.com"
 
 # Change the paths to your SSH and repository's.
-VOLUME [ "/home/breeze256/Documents/ssh", "/home/breeze256/breeze256.github.io" ]
+VOLUME [ "YOUR_SSH_PATH", "YOUR_REPO_PATH" ]
 
 WORKDIR /
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
