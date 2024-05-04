@@ -10,4 +10,4 @@
 `docker exec -it CONTAINER_NAME /bin/ash`
 
 ### Addition 2: Install dependences
-excute `instl_deps.sh` under the /docs path.
+execute `instl_deps.sh` under the /docs path.
