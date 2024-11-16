@@ -28,11 +28,11 @@ url:
 
 # Schemes
 scheme: Paradox
-#scheme: Isolation
+# scheme: Isolation
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "Hi, nice to meet you"
+    slogan: "以目的决定行为，而非以行为决定目的。"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
@@ -61,8 +61,8 @@ thumbnail:
 #        color available value: black, blue, brown, green, multi, orange, pink, purple, red, white, yellow
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
-    # purecolor: "#F5F5F5"
-    bgimg: "/img/bg.png"
+    purecolor: "#F5F5F5"
+    # bgimg: "/img/bg.png"
     bing:
         enable: false
         parameter:
