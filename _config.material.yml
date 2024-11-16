@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "/images/favicon.svg"
-    high_res_favicon: "/images/favicon.svg"
-    apple_touch_icon: "/images/favicon.svg"
+    favicon: "/img/favicon.svg"
+    high_res_favicon: "/img/favicon.svg"
+    apple_touch_icon: "/img/favicon.svg"
     keywords:
     site_verification:
         google:
@@ -62,22 +62,22 @@ thumbnail:
 #        type available value: A (animal), C (culture), N (nature), S (space), T (travel)
 background:
     # purecolor: "#F5F5F5"
-    bgimg: "/images/bg.png"
+    bgimg: "/img/bg.png"
     bing:
         enable: false
         parameter:
 
 # Images Settings
 img:
-    logo: "/images/logo.png"
-    avatar: "/images/avatar.png"
-    daily_pic: "/images/daily_pic.jpg"
-    sidebar_header: "/images/sidebar_header.png"
-    random_thumbnail: "/images/random/material-"
+    logo: "/img/logo.png"
+    avatar: "/img/avatar.png"
+    daily_pic: "/img/daily_pic.jpg"
+    sidebar_header: "/img/sidebar_header.png"
+    random_thumbnail: "/img/random/material-"
     footer_image:
         #upyun_logo:
         #link: "https://www.upyun.com/"
-        #src: "/images/upyun_logo.svg"
+        #src: "/img/upyun_logo.svg"
 
         # Custom Fonts
         #    family: the font-family which will be used in the theme
