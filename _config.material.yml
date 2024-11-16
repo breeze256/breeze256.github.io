@@ -32,7 +32,7 @@ scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "以目的决定行为，而非以行为决定目的。"
+    slogan: "自由的风终会吹动木讷的树"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
