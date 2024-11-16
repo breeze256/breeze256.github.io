@@ -53,7 +53,7 @@ reading:
 # Thumbnail Settings
 thumbnail:
     purecolor:
-    random_amount: 19
+    random_amount: 5
 
 # Background Settings
 # bing available parameter:
@@ -73,7 +73,7 @@ img:
     avatar: "/img/avatar.png"
     daily_pic: "/img/daily_pic.jpg"
     sidebar_header: "/img/sidebar_header.png"
-    random_thumbnail: "/img/random/material-"
+    random_thumbnail: "/img/random/windy-"
     footer_image:
         #upyun_logo:
         #link: "https://www.upyun.com/"
