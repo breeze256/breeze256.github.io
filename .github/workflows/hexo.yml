@@ -6,24 +6,27 @@ on:
   pull_request:
     branches: [ "master" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows us to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
 jobs:
+  # Build site.
   build:
+    # Use Ubuntu to build. Considering Nix?
     runs-on: ubuntu-latest
     steps:
+      # See: https://github.com/actions/checkout.
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: true
       
+      # Define Node version. 20 is a good version.
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
+          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node.
+          # Ref: https://github.com/actions/setup-node#supported-version-syntax.
           node-version: "20"
       
       - name: Cache NPM dependencies
@@ -34,6 +37,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       
+      # Install from package.json.
       - name: Install Dependencies
         run: npm install
       
@@ -45,6 +49,7 @@ jobs:
         with:
           path: ./public
   
+  # Deploy site to GitHub Pages.
   deploy:
     needs: build
     permissions:
