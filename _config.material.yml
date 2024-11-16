@@ -12,8 +12,8 @@ head:
         google:
         baidu:
 
-    # Enable generate structured-data as JSON+LD for SEO or not.
-    #    Set as 'false' if it cause some wrong when `hexo g`.
+            # Enable generate structured-data as JSON+LD for SEO or not.
+            #    Set as 'false' if it cause some wrong when `hexo g`.
     structured_data: true
 
 # Jump Links Settings
@@ -22,14 +22,13 @@ url:
     daily_pic: "#"
     logo: "#"
 
-
 # ---------------------------------------------------------------
 # Style Settings
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Paradox
-#scheme: Isolation
+scheme: Isolation
+#scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
@@ -68,7 +67,7 @@ background:
         enable: false
         parameter:
 
-# Images Settings
+            # Images Settings
 img:
     logo: "/img/logo.png"
     avatar: "/img/avatar.png"
@@ -77,22 +76,22 @@ img:
     random_thumbnail: "/img/random/material-"
     footer_image:
         #upyun_logo:
-            #link: "https://www.upyun.com/"
-            #src: "/img/upyun_logo.svg"
+        #link: "https://www.upyun.com/"
+        #src: "/img/upyun_logo.svg"
 
-# Custom Fonts
-#    family: the font-family which will be used in the theme
-#    use: uri of fonts host.
-#        Available value: google | baomitu | ustc | custom | catnet
-#        - When you set as 'custom', you should fill in the value of 'custom_font_host', which should be a mirror of google fonts.
-#        - If you have setup your custom font-family, don't forget to add style tag with @font-face or link.tag with font css
-#          to /source/data/head.yml as custom code, to load custom font files.
+        # Custom Fonts
+        #    family: the font-family which will be used in the theme
+        #    use: uri of fonts host.
+        #        Available value: google | baomitu | ustc | custom | catnet
+        #        - When you set as 'custom', you should fill in the value of 'custom_font_host', which should be a mirror of google fonts.
+        #        - If you have setup your custom font-family, don't forget to add style tag with @font-face or link.tag with font css
+        #          to /source/data/head.yml as custom code, to load custom font files.
 fonts:
     family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
     use: google
     custom_font_host:
 
-# Card Elevation Level
+        # Card Elevation Level
 card_elevation: 2
 
 # Copyright
@@ -137,11 +136,11 @@ hanabi:
     includeDefaultColors: true
     customColors:
 
-# Post License
-# You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
-#   For example, you can setup a CC license as:
-#       'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
-# You can also use Front-Matter `license` to override this setting.
+        # Post License
+        # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
+        #   For example, you can setup a CC license as:
+        #       'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
+        # You can also use Front-Matter `license` to override this setting.
 license:
 
 # Gallery Panel
@@ -161,8 +160,8 @@ gallery:
 # TOC Button
 
 toc:
-#   use: choose whether the line_number of toc will show or not.
-#       Available value of "linenumber": true | false
+    #   use: choose whether the line_number of toc will show or not.
+    #       Available value of "linenumber": true | false
     linenumber: true
 
 # SNS Menu
@@ -182,7 +181,7 @@ sns:
     v2ex:
     segmentfault:
 
-# SNS Share Switch
+        # SNS Share Switch
 sns_share:
     twitter: true
     facebook: true
@@ -212,9 +211,9 @@ sidebar:
         divider: false
     pages:
         #About:
-            #link: "/about"
-            #icon: person
-            #divider: false
+        #link: "/about"
+        #icon: person
+        #divider: false
     article_num:
         use: false
         divider: false
@@ -224,7 +223,6 @@ sidebar:
         support: false
         feedback: false
         material: false
-
 
 # ---------------------------------------------------------------
 # Integrated Services
@@ -242,12 +240,12 @@ comment:
     changyan_conf:
     changyan_thread_key_type: path
     livere_data_uid:
-    gitment_repo:   # git repo of the hexo
-    gitment_owner:  # git repo's owner
-    gitment_client_id:  # github app client id
-    gitment_client_secret :  # github app client secret
-    valine_leancloud_appId:  # leancloud application app id
-    valine_leancloud_appKey:  # leancloud application app key
+    gitment_repo: # git repo of the hexo
+    gitment_owner: # git repo's owner
+    gitment_client_id: # github app client id
+    gitment_client_secret: # github app client secret
+    valine_leancloud_appId: # leancloud application app id
+    valine_leancloud_appKey: # leancloud application app key
     valine_notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
     valine_verify: false # valine verify code (true/false)
     valine_pageSize: 10 # comment list page size
@@ -277,15 +275,15 @@ search:
     use: google
     swiftype_key:
 
-# Analytics Systems
-# Available value:
-#     baidu | google | cnzz
+        # Analytics Systems
+        # Available value:
+        #     baidu | google | cnzz
 analytics:
     google_site_id:
     baidu_site_id:
     cnzz_site_id:
 
-# Leancloud Views
+        # Leancloud Views
 leancloud:
     enable: false
     app_id: #你的 app_id
@@ -303,27 +301,28 @@ busuanzi:
 # Set a CDN for the files src you want to customize. The url should with protocol.
 # Default(empty) will load the files from the origin server.
 vendors:
-# MaterialCDN
-#   You can load theme unique files from your private cdn or oss.
-#   The new src will have the base domain you configured below.
-#   For example
-#       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
+    # MaterialCDN
+    #   You can load theme unique files from your private cdn or oss.
+    #   The new src will have the base domain you configured below.
+    #   For example
+    #       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source
     materialcdn:
 
-# Third party library
-#   You can load these files from public cdn.
-#   For example
-#       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
+    # Third party library
+    #   You can load these files from public cdn.
+    #   For example
+    #       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
     # jQuery 2.2.0
-    jquery:
-    # nprogress 0.2.0
-    nprogress:
-    # FontAwesome 4.5.0
-    fontawesome:
-    # MathJax 2.7.0-2.7.1
-    mathjax:
-    # Prettify r298 (only prettify.js)
-    prettify:
-    # Material Icons 3.0.1
+    jquery: # nprogress 0.2.0
+
+    nprogress: # FontAwesome 4.5.0
+
+    fontawesome: # MathJax 2.7.0-2.7.1
+
+    mathjax: # Prettify r298 (only prettify.js)
+
+    prettify: # Material Icons 3.0.1
+
     material_icons:
-    
+
+

@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: breeze256's Blog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: breeze256
+language: zh
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://breeze256.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -104,4 +104,3 @@ deploy:
   type: git
   repo: https://github.com/breeze256/breeze256.github.io.git
   branch: master
-
