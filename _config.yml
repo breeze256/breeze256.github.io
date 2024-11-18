@@ -107,6 +107,22 @@ math:
   engine: 'mathjax'
   mathjax:
     src: custom_mathjax_source
+# hexo-neat
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
 
 # DEPLOYMENT.
 ## Docs: https://hexo.io/docs/one-command-deployment
