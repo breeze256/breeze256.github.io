@@ -123,6 +123,11 @@ neat_js:
   compress:
   exclude:
     - '*.min.js'
+# RSS
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
 
 # DEPLOYMENT.
 ## Docs: https://hexo.io/docs/one-command-deployment
