@@ -102,7 +102,7 @@ ignore:
 
 # EXTENSIONS.
 ## Plugins: https://hexo.io/plugins/
-theme: material
+theme: next
 math:
   engine: 'mathjax'
   mathjax:
@@ -128,6 +128,12 @@ feed:
     type: atom
     path: atom.xml
     limit: 20
+# hexo-excerpt
+excerpt:
+  depth: 3
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
 
 # DEPLOYMENT.
 ## Docs: https://hexo.io/docs/one-command-deployment

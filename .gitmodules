@@ -1,4 +1,0 @@
-[submodule "themes/material"]
-	path = themes/material
-	url = git@github.com:breeze256/hexo-theme-material.git
-	branch = private
