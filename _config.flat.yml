@@ -1,0 +1,32 @@
+# Flat for Hexo configuration.
+
+# Allow to cache content generation.
+cache:
+  enable: true
+
+# User Interface configuration.
+interface:
+  slogan: "「自由的风终会吹动木讷的树」"
+
+# Site menu & navigation.
+menu:
+  home:
+    enable: true
+    name: "主页"
+    path: "/"
+  # TODO.
+  archives: 
+    enable: true
+    name: "归档"
+    path: "/archives"
+
+# Author's information. TODO.
+# author:
+#   avatar: ""
+#   sign: ""
+
+# Custom assets folders. DO NOT EDIT if you don't know what is this.
+assets:
+  css: stylesheets
+  js: javascripts
+  imgs: images
