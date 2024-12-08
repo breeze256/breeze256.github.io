@@ -98,9 +98,23 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: flat
 
-## hexo-optimize
+## hexo-optimize https://github.com/next-theme/hexo-optimize
 filter_optimize:
   enable: true
+  css:
+    minify: true
+    inlines:
+      - "stylesheets/main.css"
+  js:
+    minify: true
+    remove_comments: true
+  html:
+    minify: true
+  priority: 12
+
+## hexo-renderer-dartsass
+sass:
+  outputStyle: compressed # "expanded" or "compressed".
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
