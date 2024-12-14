@@ -14,11 +14,14 @@ menu:
     enable: true
     name: "主页"
     path: "/"
-  # TODO.
   archives: 
     enable: true
     name: "归档"
     path: "/archives"
+  about: 
+    enable: true
+    name: "关于"
+    path: "/about"
 
 # Author's information. TODO.
 # author:
@@ -30,3 +33,7 @@ assets:
   css: stylesheets
   js: javascripts
   imgs: images
+
+# Output style of hexo-renderer-dartsass.
+sass:
+  outputStyle: expanded # "expanded" or "compressed".
