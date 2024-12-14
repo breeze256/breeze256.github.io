@@ -48,6 +48,13 @@ jobs:
     - name: Install Dependencies
       run: pnpm install
 
+    # Install pandoc for math rendering.
+    - name: Install Pandoc
+      uses: pandoc/actions/setup@v1
+      with:
+        version: 2.19
+
+    # Build the site.
     - name: Build
       run: pnpm run build
 
