@@ -39,8 +39,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       hexo-theme-flat:
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.5.0
+        version: 1.5.0
 
 packages:
 
@@ -438,8 +438,8 @@ packages:
     resolution: {integrity: sha512-u4s0ty9Aew6jV+a9oMrXBwhrRpUQ0U8PWM/88a5aHgDru58VY81mVrxOFxs788NAsWQ8OvsJtF5m7mnXoRnSIA==}
     engines: {node: '>=12.13.0'}
 
-  hexo-theme-flat@1.4.0:
-    resolution: {integrity: sha512-AC78fiL4cLmW/5xh8wc1eAC9/4dF01qbuMIkJHPnuAqWVlxwaRGu0/be3EeDdlFIQETFyJIBoDEbqdMIbzYPVg==}
+  hexo-theme-flat@1.5.0:
+    resolution: {integrity: sha512-kRyrNV1g/yfsFy6FNbQgc1VFFeX+Ac6Cbbr6abeSW5lTH5A1CTHHMvMHkh+KEg2TWnM2TqXYMdx6TPuurF6YFw==}
 
   hexo-util@3.3.0:
     resolution: {integrity: sha512-YvGngXijE2muEh5L/VI4Fmjqb+/yAkmY+VuyhWVoRwQu1X7bmWodsfYRXX7CUYhi5LqsvH8FAe/yBW1+f6ZX4Q==}
@@ -1238,7 +1238,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  hexo-theme-flat@1.4.0: {}
+  hexo-theme-flat@1.5.0: {}
 
   hexo-util@3.3.0:
     dependencies:
