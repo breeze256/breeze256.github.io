@@ -1,8 +1,12 @@
 ---
 title: Rust 读入问题
-categories: ["学习"]
-tags: ["开发", "Rust"]
+categories:
+  - 学习
+tags:
+  - 开发
+  - Rust
 date: 2024/08/23
+abbrlink: 325
 ---
 
 Rust 读取麻烦的一批。一般情况是用 `split(' ')` 来分割整数。
