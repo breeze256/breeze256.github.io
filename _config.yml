@@ -98,19 +98,9 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: flat
 
-## hexo-optimize https://github.com/next-theme/hexo-optimize
-filter_optimize:
-  enable: true
-  css:
-    minify: true
-    inlines:
-      - "stylesheets/main.css"
-  js:
-    minify: true
-    remove_comments: true
-  html:
-    minify: true
-  priority: 12
+## hexo-minify
+minify:
+  preview: true
 
 ## hexo-renderer-dartsass
 sass:
