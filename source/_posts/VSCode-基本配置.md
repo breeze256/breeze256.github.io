@@ -85,3 +85,4 @@ scoop install vscode
 
 ![layout](https://bitbucket.org/breeze256_workspace/imgs/raw/main/notebook/csci/tools/vscode/layout.png)
 
+**待补充**
