@@ -45,8 +45,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       hexo-theme-flat:
-        specifier: ^1.5.0
-        version: 1.5.0
+        specifier: ^1.6.0
+        version: 1.6.0
 
 packages:
 
@@ -465,8 +465,8 @@ packages:
     resolution: {integrity: sha512-u4s0ty9Aew6jV+a9oMrXBwhrRpUQ0U8PWM/88a5aHgDru58VY81mVrxOFxs788NAsWQ8OvsJtF5m7mnXoRnSIA==}
     engines: {node: '>=12.13.0'}
 
-  hexo-theme-flat@1.5.0:
-    resolution: {integrity: sha512-kRyrNV1g/yfsFy6FNbQgc1VFFeX+Ac6Cbbr6abeSW5lTH5A1CTHHMvMHkh+KEg2TWnM2TqXYMdx6TPuurF6YFw==}
+  hexo-theme-flat@1.6.0:
+    resolution: {integrity: sha512-FCcrESgog/tOCAZJKRQB+ooFyLbymU1/JVvKppH1SGjUBQWLeGbMGtHBl21F02q1M0vaFMwpY20EyTK6ekwv9w==}
 
   hexo-util@2.7.0:
     resolution: {integrity: sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==}
@@ -481,8 +481,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  highlight.js@11.10.0:
-    resolution: {integrity: sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==}
+  highlight.js@11.11.0:
+    resolution: {integrity: sha512-6ErL7JlGu2CNFHyRQEuDogOyGPNiqcuWdt4iSSFUPyferNTGlNTPFqeV36Y/XwA4V/TJ8l0sxp6FTnxud/mf8g==}
     engines: {node: '>=12.0.0'}
 
   htmlparser2@6.1.0:
@@ -1262,7 +1262,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  hexo-theme-flat@1.5.0: {}
+  hexo-theme-flat@1.6.0: {}
 
   hexo-util@2.7.0:
     dependencies:
@@ -1270,7 +1270,7 @@ snapshots:
       camel-case: 4.1.2
       cross-spawn: 7.0.6
       deepmerge: 4.3.1
-      highlight.js: 11.10.0
+      highlight.js: 11.11.0
       htmlparser2: 7.2.0
       prismjs: 1.29.0
       strip-indent: 3.0.0
@@ -1280,7 +1280,7 @@ snapshots:
       camel-case: 4.1.2
       cross-spawn: 7.0.6
       deepmerge: 4.3.1
-      highlight.js: 11.10.0
+      highlight.js: 11.11.0
       htmlparser2: 9.1.0
       prismjs: 1.29.0
       strip-indent: 3.0.0
@@ -1314,7 +1314,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  highlight.js@11.10.0: {}
+  highlight.js@11.11.0: {}
 
   htmlparser2@6.1.0:
     dependencies:
