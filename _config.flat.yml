@@ -10,18 +10,9 @@ interface:
 
 # Site menu & navigation.
 menu:
-  home:
-    enable: true
-    name: "主页"
-    path: "/"
-  archives: 
-    enable: true
-    name: "归档"
-    path: "/archives"
-  about: 
-    enable: true
-    name: "关于"
-    path: "/about"
+  home: "/"
+  archives: "/archives"
+  about: "/about"
 
 # Author's information. TODO.
 # author:
