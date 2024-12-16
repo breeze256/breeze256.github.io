@@ -5,7 +5,7 @@ categories:
 tags:
   - 开发
   - Rust
-date: 2024/08/23
+date: 2024-08-23
 abbrlink: ba8b3d49
 ---
 
