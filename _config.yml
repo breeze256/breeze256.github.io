@@ -88,8 +88,7 @@ ignore:
 theme: flat
 
 ## hexo-minify.
-minify:
-  preview: true
+all_minifier: true
 
 ## hexo-renderer-dartsass.
 sass:
