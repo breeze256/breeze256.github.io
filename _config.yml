@@ -124,7 +124,7 @@ abbrlink:
 feed:
   enable: true
   type: atom
-  path: atom.xml
+  path: /atom.xml
   limit: 20
   hub:
   content:
