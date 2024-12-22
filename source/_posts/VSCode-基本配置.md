@@ -83,5 +83,3 @@ scoop install vscode
 下图是 VSCode 启动后的界面，简单说明如图：
 
 ![layout](https://bitbucket.org/breeze256_workspace/imgs/raw/main/notebook/csci/tools/vscode/layout.png)
-
-**待补充**
