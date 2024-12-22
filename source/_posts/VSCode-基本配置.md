@@ -5,7 +5,6 @@ categories:
 tags:
   - 开发
 date: 2024-12-14
-abbrlink: 84d0b396
 ---
 
 Visual Studio Code（以下简称VSCode）是一款由微软开发且跨平台的免费源代码编辑器。

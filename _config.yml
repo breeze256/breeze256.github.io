@@ -117,7 +117,7 @@ abbrlink:
   rep: hex # Representation of abbrlink in URLs. Support dec(default) and hex
   drafts: false # Whether to generate abbrlink for drafts. (false in default)
   force: false # Enable force mode. In this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had an abbrlink. (false in default)
-  writeback: true # Whether to write changes to front-matters back to the actual markdown files. (true in default)
+  writeback: false # Whether to write changes to front-matters back to the actual markdown files. (true in default)
 
 ## hexo-generator-feed
 feed:
