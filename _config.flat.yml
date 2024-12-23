@@ -30,7 +30,7 @@ pjax: false
 
 # Aplayer settings.
 aplayer:
-  enable: true
+  enable: false
   id: 2196136085 # List ID.
   server: netease
   type: playlist
