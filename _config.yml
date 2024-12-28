@@ -85,7 +85,7 @@ ignore:
 
 # Extensions.
 ## Theme.
-theme: flat
+theme: plata
 
 ## hexo-minify.
 all_minifier: true
