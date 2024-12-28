@@ -5,7 +5,8 @@ categories:
 tags:
   - 开发
   - Rust
-date: 2024-08-23
+abbrlink: ba8b3d49
+date: 2024-08-23 00:00:00
 ---
 
 Rust 读取麻烦的一批。一般情况是用 `split(' ')` 来分割整数。
