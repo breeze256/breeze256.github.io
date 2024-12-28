@@ -96,7 +96,7 @@ sass:
 
 ## hexo-excerpt.
 excerpt:
-  depth: 1
+  depth: 2
 
 ## hexo-filter-mathjax.
 mathjax:
