@@ -19,6 +19,8 @@
           buildInputs = [
             pkgs.nodejs
             pkgs.nodePackages.pnpm
+            pkgs.hexo-cli
+            pkgs.pandoc
           ];
 
           shellHook = ''

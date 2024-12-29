@@ -8,7 +8,6 @@ on:
   # Allows us to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
-
 jobs:
   # Build site.
   build:
@@ -16,47 +15,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # See: https://github.com/actions/checkout.
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         submodules: false
 
-    # Install pnpm package manager.
-    - name: Install pnpm
-      uses: pnpm/action-setup@v4
+    - name: Install Nix
+      uses: cachix/install-nix-action@v27
       with:
-        # Define pnpm version.
-        version: 9
-
-    # Define Node version. 20 is a good version.
-    - name: Use Node.js 20
-      uses: actions/setup-node@v4
-      with:
-        # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node.
-        # Ref: https://github.com/actions/setup-node#supported-version-syntax.
-        node-version: "20"
+        nix_path: nixpkgs=channel:nixos-24.11
 
     - name: Cache NPM dependencies
       uses: actions/cache@v4
       with:
         path: node_modules
         key: ${{ runner.OS }}-npm-cache
-        restore-keys: |
-          ${{ runner.OS }}-npm-cache
+        restore-keys: ${{ runner.OS }}-npm-cache
 
-    # Install from package.json.
-    - name: Install Dependencies
-      run: pnpm install
-
-    # Install pandoc for math rendering.
-    - name: Install Pandoc
-      uses: pandoc/actions/setup@v1
-      with:
-        version: 2.19
-
-    # Build the site.
-    - name: Build
-      run: pnpm run build
+    - name: Build site
+      run: nix develop --command bash -c "hexo build"
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3
