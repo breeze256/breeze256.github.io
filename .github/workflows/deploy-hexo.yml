@@ -34,7 +34,7 @@ jobs:
         restore-keys: ${{ runner.OS }}-npm-cache
 
     - name: Build site
-      run: nix develop --command bash -c "hexo generate"
+      run: nix develop --command bash -c "pnpm install && hexo generate"
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3
