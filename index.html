@@ -1,96 +1,55 @@
-
 <!doctype html>
 <html lang="zh">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="breeze256's Homepage">
-    <meta name="keywords" content="breeze256">
+    <meta name="keywords" content="breeze256, homemage">
     <meta name="author" content="breeze256">
     <meta name="copyright" content="breeze256">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css" />
-    <title>breeze256 · Home</title>
-
-    <!-- Favicon -->
+    <link rel="stylesheet" href="assets/style.css?v=1.0">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Material+Icons&display=swap" rel="stylesheet">
+    
+    <title>breeze256 - Home</title>
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
   </head>
-  <body class="text-center">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/bootstrap.bundle.min.js"></script>
-    <div class="container d-flex flex-column h-100 p-3">
-      <header class="mb-auto"></header>
-      <main role="main" class="inner">
+  <body class="grey lighten-4">
 
-        <div class="logo-group">
-          <img class="logo" src="assets/breeze256.jpg" alt="logo" />
-          <div class="logo-text">
-            <p class="logo-text-down">
-              breeze256
-            </p>
-            <p class="logo-text-up">
-              Glory and Prosperity
-            </p>
-          </div>
-        </div>
+    <div id="main-content" class="container center-align">
 
-        <div class="link-group">
-          <a class="main-link" href="https://github.com/breeze256" 
-              data-toggle="tooltip" data-placement="bottom" data-html="true" 
-              title="<b>GitHub</b>">
-              <i class="fab fa-github"></i>
-          </a>
-          <span style="opacity: 0.7;"> / </span>
-          <a class="main-link" href="https://blog.breeze256.ltd/"
-              data-toggle="tooltip" data-placement="bottom" data-html="true" 
-              title="<b>Blog</b>">
-              <i class="fa fa-blog"></i>
-          </a>
-          <span style="opacity: 0.7;"> / </span>
-          <a class="main-link" href="mailto:breeze256@foxmail.com"
-              data-toggle="tooltip" data-placement="bottom" data-html="true" 
-              title="<b>Email</b>">
-              <i class="fa fa-envelope"></i>
-          </a>
-          <span style="opacity: 0.7;"> / </span>
-          <a class="main-link" href="https://t.me/breeze256_tg"
-              data-toggle="tooltip" data-placement="bottom" data-html="true" 
-              title="<b>Telegram Channel</b>">
-              <i class="fab fa-telegram"></i>
-          </a>
-          <span style="opacity: 0.7;"> / </span>
-          <a class="main-link" href="https://blog.breeze256.ltd/about/"
-              data-toggle="tooltip" data-placement="bottom" data-html="true" 
-              title="<b>About me</b>">
-              <i class="fa fa-info-circle"></i>
-          </a>
+      <div id="profile" class="section">
+        <img id="profile_avatar" src="assets/breeze256.jpg" alt="avatar" class="square responsive-img z-depth-2" loading="lazy">
+        <div id="profile_text" style="text-align: left;">
+          <h4 id="profile_text_name" class="blue-grey-text text-darken-3">breeze256</h4>
+          <p id="profile_text_bio" class="flow-text grey-text text-darken-1">What does not kill me, makes me stronger</p>
         </div>
-      </main>
-      <footer class="mt-auto">
-        <div class="inner">
-          <p>
-            Copyright &copy; 2025
-              <strong>@breeze256</strong>
-          </p>
-        </div>
-      </footer>
+      </div>
+      
+      <div id="nav" class="section">
+        <a id="nav-main" class="waves-effect waves-light btn blue-grey darken-2" href="https://blog.breeze256.ltd/" target="_blank" rel="noopener noreferrer">
+          <i class="material-icons left">article</i>Blog
+        </a>
+        <a id="nav-second" class="btn-flat" href="mailto:breeze256@foxmail.com">
+          <i class="material-icons left">email</i>E-Mail
+        </a>
+      </div>
     </div>
-    <div>
-      <a id="colormode" href="javascript:;">
-        <i class="fas fa-sun"></i>
-      </a>
-    </div>
-    <script src="assets/darkmode.js"></script>
+
+    <footer id="footer" class="page-footer blue-grey darken-3">
+      <div class="container center-align">
+        © 2025 breeze256
+      </div>
+    </footer>
+
+    <script src="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
