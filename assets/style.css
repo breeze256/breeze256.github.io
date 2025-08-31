@@ -17,6 +17,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
 }
 
 #profile_avatar {
