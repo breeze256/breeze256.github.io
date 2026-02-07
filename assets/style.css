@@ -76,8 +76,12 @@ body {
 
 #profile_text_name {
     margin-top: 48px;
-    font-family: Borel;
-    height: 16px;
+    margin-left: -1px;
+    width: min-content;
+    color: #fff !important;
+    background-color: #37474f;
+    font-size: 32px;
+    font-family: 'Overpass Mono', monospace;
 }
 
 @media (max-width: 720px) {
@@ -88,8 +92,9 @@ body {
 
 #profile_text_bio {
     margin-bottom: 28px;
-    font-family: 'Roboto Mono', sans-serif;
-    font-size: 24px;
+    font-family: 'Overpass Mono', sans-serif;
+    font-size: 20px;
+    color: #666 !important;
 }
 
 @media (max-width: 720px) {
