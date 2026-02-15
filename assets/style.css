@@ -52,6 +52,13 @@ body::after {
     }
 }
 
+#top-btn {
+    top: 15px;
+    right: unset;
+    left: 15px;
+    position: fixed;
+}
+
 #profile {
     display: flex;
     align-items: center;
@@ -169,9 +176,25 @@ body::after {
     z-index: 1;
 }
 
+/* Misc */
+
 .btn-flat {
     color: #555 !important;
     text-shadow: 1px 1px 1px rgba(66, 66, 66, 0.5);
+}
+
+/* 防止图标被选中 */
+.material-icons,
+.btn-floating,
+.btn-flat {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.btn-floating {
+    border-radius: 10% !important;
 }
 
 /* Dark scheme */

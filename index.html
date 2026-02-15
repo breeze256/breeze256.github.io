@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Material+Icons&display=swap" rel="stylesheet">
-    
+
     <title>breeze256 - Home</title>
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -23,6 +23,18 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
   </head>
   <body class="grey lighten-4">
+
+    <div id="top-btn" class="fixed-action-btn">
+      <a class="btn-floating btn-large blue-grey darken-2">
+        <i class="large material-icons">menu</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+      </ul>
+    </div>
 
     <div id="main-content" class="container center-align">
 
@@ -38,7 +50,7 @@
         <a id="nav-main" class="waves-effect waves-light btn blue-grey darken-2" href="https://blog.breeze256.ltd/" target="_blank" rel="noopener noreferrer">
           <i class="material-icons left">article</i>Blog
         </a>
-        <a id="nav-second" class="btn-flat" href="mailto:breeze256@foxmail.com">
+        <a id="nav-second" class="waves-effect btn-flat" href="mailto:breeze256@foxmail.com">
           <i class="material-icons left">email</i>E-Mail
         </a>
       </div>
@@ -49,7 +61,17 @@
         © 2025 - <span id="year"></span> breeze256
       </div>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script src="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.getElementById('top-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+          hoverEnabled: false,
+          direction: 'bottom'
+        });
+      });
+    </script>
   </body>
 </html>
