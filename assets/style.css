@@ -229,6 +229,11 @@ body::after {
         background: rgba(27, 29, 30, 0.7);
     }
 
+    #top-btn-label {
+        color: #eee !important;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    }
+
     #profile_text_bio {
         color: #eee !important;
         text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
