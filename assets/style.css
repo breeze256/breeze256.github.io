@@ -59,6 +59,53 @@ body::after {
     position: fixed;
 }
 
+/* Uptime card positioning */
+#uptime-card {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 180px;
+    z-index: 50;
+}
+
+#uptime-card .card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#uptime-text {
+    font-family: 'Roboto Mono', monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Drag handle: only this area initiates drag */
+.drag-handle {
+    cursor: move;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    touch-action: none;
+}
+
+/* Enlarge close button hit area to avoid mis-taps */
+#uptime-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#uptime-close:hover {
+    background: rgba(0,0,0,0.04);
+}
+
 /* 菜单项文本标签样式 */
 #top-btn ul li {
     position: relative;
@@ -193,6 +240,46 @@ body::after {
     margin-left: 24px;
 }
 
+#func-buttons-group {
+    display: flex;
+    gap: 8px;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    z-index: 10;
+}
+
+#func-buttons-group .btn-flat {
+    padding: 0 12px;
+    font-size: 18px;
+    min-width: 44px;
+    height: 44px;
+    line-height: 44px;
+}
+
+#func-buttons-group .material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+@media (max-width: 720px) {
+    #func-buttons-group {
+        bottom: 50px;
+        right: 10px;
+    }
+}
+
+/* 雪花画布 */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
 #footer {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -243,4 +330,23 @@ body::after {
         color: #eee !important;
         text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
     }
+}
+
+html[data-theme="dark"] body::after {
+    background: rgba(27, 29, 30, 0.9) !important;
+}
+
+html[data-theme="dark"] #top-btn-label {
+    color: #eee !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+html[data-theme="dark"] #profile_text_bio {
+    color: #eee !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+html[data-theme="dark"] .btn-flat {
+    color: #eee !important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }

@@ -34,6 +34,17 @@
       </ul>
     </div>
 
+    <!-- Uptime card (top-right) -->
+    <div id="uptime-card" class="card small white z-depth-2" style="height: 100px;">
+      <div class="card-content" style="padding:8px 12px;">
+        <span class="card-title" style="font-size:14px;">
+          <span class="drag-handle">🎉 该网站已运行</span>
+          <a id="uptime-close" class="right" href="#" style="line-height:18px; font-size:18px; color:inherit; text-decoration:none;">×</a>
+        </span>
+        <p id="uptime-text" style="margin:4px 0 0; font-size:13px; color:#333;">加载中…</p>
+      </div>
+    </div>
+
     <div id="main-content" class="container center-align">
 
       <div id="profile" class="section">
@@ -56,10 +67,23 @@
 
     <footer id="footer" class="page-footer blue-grey darken-3">
       <div class="container center-align">
-        © 2025 - <span id="year"></span> breeze256
+        © 2025 - <span id="year"></span> breeze256, All rights reserved. 
       </div>
     </footer>
+
+    <div id="func-buttons-group">
+      <a id="snow-toggle" class="waves-effect btn-flat" href="#" title="雪花效果">
+        <i class="material-icons">ac_unit</i>
+      </a>
+      <a id="theme-toggle" class="waves-effect btn-flat" href="#" title="切换主题">
+        <i class="material-icons">dark_mode</i>
+      </a>
+    </div>
+    
     <script src="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascripts/uptime.js"></script>
+    <script src="assets/javascripts/snow.js"></script>
+    <script src="assets/javascripts/theme-toggle.js"></script>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
       
