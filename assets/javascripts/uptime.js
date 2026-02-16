@@ -3,6 +3,7 @@
   const textEl = () => document.getElementById('uptime-text');
   const closeBtn = () => document.getElementById('uptime-close');
   let startTime = Date.now();
+  const CLOSED_KEY = 'uptime_closed';
   // 基准时间（本地时区）：2025-05-27 12:00:00
   const baseTime = new Date(2025, 4, 27, 12, 0, 0).getTime();
   let timerId = null;
@@ -53,6 +54,7 @@
     const card = document.getElementById('uptime-card');
     if (card) card.parentNode && card.parentNode.removeChild(card);
     stop();
+    try { localStorage.setItem(CLOSED_KEY, '1'); } catch (err) {}
     // remove resize handler if set
     if (window.__uptimeClampHandler) {
       window.removeEventListener('resize', window.__uptimeClampHandler);
@@ -61,6 +63,15 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    // If user previously closed the uptime card, keep it hidden
+    try {
+      if (localStorage.getItem(CLOSED_KEY) === '1') {
+        const card = document.getElementById('uptime-card');
+        if (card) card.parentNode && card.parentNode.removeChild(card);
+        return;
+      }
+    } catch (err) {}
+
     startTime = Date.now();
     const cb = closeBtn();
     if (cb) cb.addEventListener('click', hideCard);
