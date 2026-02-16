@@ -70,6 +70,8 @@
     const card = document.getElementById('uptime-card');
     if (card) {
       // clamp position so card stays inside viewport
+      // preserve anchor state on X/Y axes so card remains attached to edges when resized
+      const ANCHOR_THRESHOLD = 16;
       function clampPosition() {
         const margin = 8;
         const rect = card.getBoundingClientRect();
@@ -81,10 +83,47 @@
         }
         const maxLeft = Math.max(window.innerWidth - card.offsetWidth - margin, margin);
         const maxTop = Math.max(window.innerHeight - card.offsetHeight - margin, margin);
-        left = Math.min(Math.max(left, margin), maxLeft);
-        top = Math.min(Math.max(top, margin), maxTop);
-        card.style.left = left + 'px';
-        card.style.top = top + 'px';
+
+        // read anchors (set on release); default to 'none'
+        const anchorX = card.dataset.anchorX || 'none';
+        const anchorY = card.dataset.anchorY || 'none';
+
+        // distances to edges
+        const distLeft = left;
+        const distRight = window.innerWidth - (left + card.offsetWidth);
+        const distTop = top;
+        const distBottom = window.innerHeight - (top + card.offsetHeight);
+
+        let newLeft = left;
+        let newTop = top;
+
+        // X axis: keep pinned if anchored
+        if (anchorX === 'left') {
+          newLeft = margin;
+        } else if (anchorX === 'right') {
+          newLeft = maxLeft;
+        } else {
+          newLeft = Math.min(Math.max(left, margin), maxLeft);
+          // detect if near edges and set anchor for future resizes
+          if (distRight <= ANCHOR_THRESHOLD) card.dataset.anchorX = 'right';
+          else if (distLeft <= ANCHOR_THRESHOLD) card.dataset.anchorX = 'left';
+          else card.dataset.anchorX = 'none';
+        }
+
+        // Y axis: similar
+        if (anchorY === 'top') {
+          newTop = margin;
+        } else if (anchorY === 'bottom') {
+          newTop = maxTop;
+        } else {
+          newTop = Math.min(Math.max(top, margin), maxTop);
+          if (distTop <= ANCHOR_THRESHOLD) card.dataset.anchorY = 'top';
+          else if (distBottom <= ANCHOR_THRESHOLD) card.dataset.anchorY = 'bottom';
+          else card.dataset.anchorY = 'none';
+        }
+
+        card.style.left = newLeft + 'px';
+        card.style.top = newTop + 'px';
         card.style.right = 'auto';
       }
       // expose for hideCard to remove on cleanup
@@ -101,6 +140,9 @@
         if (e.target && e.target.closest && e.target.closest('#uptime-close')) return;
         // only start drag on primary button
         if (e.pointerType === 'mouse' && e.button !== 0) return;
+        // clear anchors while dragging so movement is free
+        card.dataset.anchorX = 'none';
+        card.dataset.anchorY = 'none';
         dragging = true;
         card.setPointerCapture(e.pointerId);
         // compute origin positions
@@ -146,6 +188,13 @@
         let finalTop = Math.min(Math.max(rect.top, margin), maxTop);
         card.style.left = finalLeft + 'px';
         card.style.top = finalTop + 'px';
+        // set anchors based on proximity to edges after release
+        const distLeft = finalLeft;
+        const distRight = window.innerWidth - (finalLeft + card.offsetWidth);
+        const distTop = finalTop;
+        const distBottom = window.innerHeight - (finalTop + card.offsetHeight);
+        card.dataset.anchorX = (distRight <= ANCHOR_THRESHOLD) ? 'right' : (distLeft <= ANCHOR_THRESHOLD ? 'left' : 'none');
+        card.dataset.anchorY = (distTop <= ANCHOR_THRESHOLD) ? 'top' : (distBottom <= ANCHOR_THRESHOLD ? 'bottom' : 'none');
         document.body.style.userSelect = '';
       }
 
