@@ -57,6 +57,7 @@ body::after {
     right: unset;
     left: 15px;
     position: fixed;
+    height: fit-content;
 }
 
 /* Uptime card positioning */
