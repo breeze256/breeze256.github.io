@@ -112,7 +112,8 @@
 
   function initSnow() {
     const saved = localStorage.getItem('snow');
-    if (saved === '1') startSnow();
+    // 默认开启雪花效果：当 localStorage 未设置（null）或设置为 '1' 时启动
+    if (saved === null || saved === '1') startSnow();
     updateSnowButton();
     const btn = document.getElementById('snow-toggle');
     if (btn) btn.addEventListener('click', toggleSnow);
