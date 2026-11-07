@@ -1,99 +1,91 @@
-<!doctype html>
-<html lang="zh">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="breeze256's Homepage">
-    <meta name="keywords" content="breeze256, homemage">
-    <meta name="author" content="breeze256">
-    <meta name="copyright" content="breeze256">
-
-    <link rel="stylesheet" href="assets/style.css?v=1.0">
-    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Material+Icons&display=swap" rel="stylesheet">
-
-    <title>breeze256~</title>
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/stylesheets/main.css" />
+    <title>brz256's Lab</title>
   </head>
-  <body class="grey lighten-4">
-
-    <div id="top-btn" class="fixed-action-btn">
-      <a class="btn-floating btn-large blue-grey darken-2">
-        <i class="large material-icons">menu</i>
-      </a>
-      <ul>
-        <li><a class="btn-floating green"><i class="material-icons">casino</i></a><span id="top-btn-label">手气不错</span></li>
-        <li><a class="btn-floating blue"><i class="material-icons">info</i></a><span id="top-btn-label">About</span></li>
-      </ul>
-    </div>
-
-    <!-- Uptime card (top-right) -->
-    <div id="uptime-card" class="card small white z-depth-2" style="height: 100px;">
-      <div class="card-content" style="padding:8px 12px;">
-        <span class="card-title" style="font-size:14px;">
-          <span class="drag-handle">🎉 该网站已运行</span>
-          <a id="uptime-close" class="right" href="#" style="line-height:18px; font-size:18px; color:inherit; text-decoration:none;">×</a>
-        </span>
-        <p id="uptime-text" style="margin:4px 0 0; font-size:13px; color:#333;">加载中…</p>
-      </div>
-    </div>
-
-    <div id="main-content" class="container center-align">
-
-      <div id="profile" class="section">
-        <img id="profile_avatar" src="assets/breeze256.jpg" alt="avatar" class="square responsive-img z-depth-2" loading="lazy">
-        <div id="profile_text" style="text-align: left;">
-          <h4 id="profile_text_name" class="blue-grey-text text-darken-3">breeze256~</h4>
-          <p id="profile_text_bio" class="flow-text grey-text text-darken-1">What does not kill me, makes me stronger</p>
+  <body>
+    <!-- Top nav -->
+    <header>
+      <nav id="nav_form" aria-label="Main navigation">
+        <div>
+          <input type="radio" name="nav" id="nav_home" value="#home" checked />
+          <label class="nav_element" for="nav_home">01 Home</label>
         </div>
+        <div>
+          <input type="radio" name="nav" id="nav_lab" value="#lab" />
+          <label class="nav_element" for="nav_lab">02 Lab</label>
+        </div>
+        <div>
+          <input type="radio" name="nav" id="nav_about" value="#about" />
+          <label class="nav_element" for="nav_about">03 About</label>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h1>brz256's Lab</h1>
+        <p>按下键盘任意键，底部对应键帽会亮起。</p>
+        <p>试试 M 切换主题、H 隐藏键帽、+ / - 缩放。</p>
+      </section>
+      <section id="lab">
+        <h2>Lab</h2>
+        <p>这里放一些实验性的东西。</p>
+      </section>
+      <section id="about">
+        <h2>About</h2>
+        <p>brz256 的个人站点。</p>
+      </section>
+    </main>
+
+    <!-- Keyboard Section -->
+    <div id="keyboard_section">
+      <div class="key_group">
+        <div class="keys">
+          <kbd data-key="1">1</kbd>
+          <kbd data-key="2">2</kbd>
+          <kbd data-key="3">3</kbd>
+        </div>
+        <p>To section</p>
       </div>
-      
-      <div id="nav" class="section">
-        <a id="nav-main" class="waves-effect waves-light btn blue-grey darken-2" href="https://blog.breeze256.ink/" target="_blank" rel="noopener noreferrer">
-          <i class="material-icons left">feed</i>Blog
-        </a>
-        <a id="nav-second" class="waves-effect btn-flat" href="mailto:breeze256@foxmail.com">
-          <i class="material-icons left">email</i>E-Mail
-        </a>
+      <div class="key_group">
+        <div class="keys">
+          <kbd data-key="ArrowUp">↑</kbd>
+          <kbd data-key="ArrowDown">↓</kbd>
+          <kbd data-key="ArrowLeft">←</kbd>
+          <kbd data-key="ArrowRight">→</kbd>
+        </div>
+        <p>Navigate</p>
+      </div>
+      <div class="key_group">
+        <div class="keys">
+          <kbd data-key="w">W</kbd>
+          <kbd data-key="a">A</kbd>
+          <kbd data-key="s">S</kbd>
+          <kbd data-key="d">D</kbd>
+        </div>
+        <p>Scroll</p>
+      </div>
+      <div class="key_group">
+        <div class="keys">
+          <kbd data-key="+">+</kbd>
+          <kbd data-key="-">-</kbd>
+        </div>
+        <p>Zoom</p>
+      </div>
+      <div class="key_group">
+        <div class="keys"><kbd data-key="m">M</kbd></div>
+        <p>Light/dark</p>
+      </div>
+      <div class="key_group">
+        <div class="keys"><kbd data-key="h">H</kbd></div>
+        <p>Hide keys</p>
       </div>
     </div>
 
-    <footer id="footer" class="page-footer blue-grey darken-3">
-      <div class="container center-align">
-        © 2025 - <span id="year"></span> breeze256, All rights reserved. 
-      </div>
-    </footer>
-
-    <div id="func-buttons-group">
-      <a id="snow-toggle" class="waves-effect btn-flat" href="#" title="雪花效果">
-        <i class="material-icons">ac_unit</i>
-      </a>
-      <a id="theme-toggle" class="waves-effect btn-flat" href="#" title="切换主题">
-        <i class="material-icons">dark_mode</i>
-      </a>
-    </div>
-    
-    <script src="https://s4.zstatic.net/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/javascripts/uptime.js"></script>
-    <script src="assets/javascripts/snow.js"></script>
-    <script src="assets/javascripts/theme-toggle.js"></script>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.getElementById('top-btn');
-        var instances = M.FloatingActionButton.init(elems, {
-          hoverEnabled: false,
-          direction: 'bottom'
-        });
-      });
-    </script>
+    <script src="assets/javascripts/keyboard.js" defer></script>
   </body>
 </html>

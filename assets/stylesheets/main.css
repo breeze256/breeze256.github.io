@@ -1,0 +1,182 @@
+:root {
+  --bg: #aaa;
+  --text: #111;
+  --font-mono: 'Roboto Mono', 'Noto Sans Mono CJK SC', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+}
+
+[data-theme='dark'] {
+  --bg: #111;
+  --text: #aaa;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 6rem; /* Space for keyboard section */
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem; /* 避免固定导航遮挡锚点 */
+}
+
+main {
+  max-width: 60ch;
+  padding: 5rem 4ch 3rem;
+}
+
+/* ==============================
+   Top Nav
+   ============================== */
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: 2rem 4ch 0;
+  background: var(--bg);
+}
+
+#nav_form {
+  display: flex;
+  gap: 4ch;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  scrollbar-width: none;
+}
+
+#nav_form::-webkit-scrollbar {
+  display: none;
+}
+
+/* 原生 radio 隐藏，仅保留可访问性 */
+#nav_form input[type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+#nav_form .nav_element {
+  display: inline-block;
+  padding: 0 0.25ch;
+  cursor: pointer;
+  user-select: none;
+}
+
+#nav_form input:checked + .nav_element,
+#nav_form input:hover + .nav_element,
+#nav_form input:focus + .nav_element {
+  color: var(--bg);
+  background: var(--text);
+}
+
+#nav_form .nav_element:active {
+  background: var(--text);
+  color: var(--bg);
+  opacity: 0.75;
+}
+
+/* ==============================
+   Fonts
+   ============================== */
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('../fonts/RobotoMono/RobotoMono-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('../fonts/RobotoMono/RobotoMono-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Mono CJK SC';
+  src: url('../fonts/NotoSansMonoCJKsc/NotoSansMonoCJKsc-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Mono CJK SC';
+  src: url('../fonts/NotoSansMonoCJKsc/NotoSansMonoCJKsc-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==============================
+   Keyboard Section
+   ============================== */
+#keyboard_section {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 100;
+  display: flex;
+  gap: 4ch;
+  align-items: end;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.25rem 4ch 1rem;
+  overflow-x: auto;
+  background: var(--bg);
+  font-size: 0.8rem;
+  scrollbar-width: none;
+}
+
+#keyboard_section::-webkit-scrollbar {
+  display: none;
+}
+
+#keyboard_section.hidden {
+  display: none;
+}
+
+.key_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.key_group p {
+  margin: 0;
+}
+
+.keys {
+  display: flex;
+  gap: 0.5ch;
+  margin-bottom: 0.125rem;
+}
+
+kbd {
+  padding: 0 calc(0.5ch - 1px);
+  border: 1px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  font: inherit;
+  line-height: 1.15;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* 按下状态：反色 + 下沉 */
+kbd.active_key {
+  color: var(--bg);
+  background: var(--text);
+  transform: translateY(1px);
+}
+
