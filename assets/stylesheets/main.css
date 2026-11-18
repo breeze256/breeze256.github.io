@@ -1,12 +1,12 @@
 :root {
-  --bg: #aaa;
-  --text: #111;
-  --font-mono: 'Roboto Mono', 'Noto Sans Mono CJK SC', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --bg: #eaeaea;
+  --text: #232322;
+  --font-mono: 'Roboto Mono', 'Noto Sans CJK SC', ui-monospace, 'SFMono-Regular', Consolas, monospace;
 }
 
 [data-theme='dark'] {
-  --bg: #111;
-  --text: #aaa;
+  --bg: #232322;
+  --text: #e5e5e5;
 }
 
 body {
@@ -27,6 +27,15 @@ html {
 main {
   max-width: 60ch;
   padding: 5rem 4ch 3rem;
+}
+
+/* 分页：只显示当前页 */
+.section {
+  display: none;
+}
+
+.section.is-active {
+  display: block;
 }
 
 /* ==============================
@@ -87,6 +96,24 @@ header {
 }
 
 /* ==============================
+   Heading
+   ============================== */
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 2.5rem;
+  width: fit-content;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 2rem;
+  width: fit-content;
+}
+
+/* ==============================
    Fonts
    ============================== */
 @font-face {
@@ -106,17 +133,11 @@ header {
 }
 
 @font-face {
-  font-family: 'Noto Sans Mono CJK SC';
-  src: url('../fonts/NotoSansMonoCJKsc/NotoSansMonoCJKsc-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Noto Sans Mono CJK SC';
-  src: url('../fonts/NotoSansMonoCJKsc/NotoSansMonoCJKsc-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'Noto Sans CJK SC';
+  src:
+    local('Noto Sans CJK SC'),
+    url('../fonts/NotoSansSC/NotoSansSC-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }

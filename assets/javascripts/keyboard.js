@@ -6,7 +6,7 @@
     [...section.querySelectorAll('kbd')].map((k) => [k.dataset.key.toLowerCase(), k])
   )
 
-  // 统一小写，与 data-key / actions 的键名保持一致（ArrowUp → arrowup）
+  // 统一小写
   const nameOf = (e) => e.key.toLowerCase()
 
   const zoom = (delta) => {
@@ -21,29 +21,51 @@
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }
 
-  // 顶部导航：切换 radio 并平滑滚动到对应区块
+  // 顶部导航：分页切换（hash 路由，支持直接链接与前进/后退）
   const navInputs = [...document.querySelectorAll('#nav_form input[type="radio"]')]
-  const goToSection = (i) => navInputs[i]?.click()
-  document.getElementById('nav_form')?.addEventListener('change', (e) => {
-    document.querySelector(e.target.value)?.scrollIntoView({ behavior: 'smooth' })
-  })
+  const sections = [...document.querySelectorAll('main > .section')]
+
+  const showSection = (id) => {
+    if (!sections.length) return
+    const idx = Math.max(0, sections.findIndex((s) => s.id === id))
+    sections.forEach((s, n) => s.classList.toggle('is-active', n === idx))
+    navInputs[idx].checked = true
+    if (location.hash !== `#${sections[idx].id}`) location.hash = sections[idx].id
+    scrollTo(0, 0)
+    document.title = `${navInputs[idx].labels[0].textContent} · brz256's Lab`
+  }
+
+  const goToSection = (i) => sections[i] && showSection(sections[i].id)
+
+  document
+    .getElementById('nav_form')
+    ?.addEventListener('change', (e) => showSection(e.target.value.slice(1)))
+
+  addEventListener('hashchange', () => showSection(location.hash.slice(1)))
+
+  showSection(location.hash.slice(1))
 
   const actions = {
     1: () => goToSection(0),
     2: () => goToSection(1),
     3: () => goToSection(2),
+    // Navigate：hjkl 与方向键等价
+    k: () => scrollBy(0, -120),
     arrowup: () => scrollBy(0, -120),
-    w: () => scrollBy(0, -120),
+    j: () => scrollBy(0, 120),
     arrowdown: () => scrollBy(0, 120),
-    s: () => scrollBy(0, 120),
+    h: () => scrollBy(-120, 0),
     arrowleft: () => scrollBy(-120, 0),
-    a: () => scrollBy(-120, 0),
+    l: () => scrollBy(120, 0),
     arrowright: () => scrollBy(120, 0),
+    w: () => scrollBy(0, -120),
+    a: () => scrollBy(-120, 0),
+    s: () => scrollBy(0, 120),
     d: () => scrollBy(120, 0),
     '+': () => zoom(1),
     '-': () => zoom(-1),
     m: toggleTheme,
-    h: () => section.classList.toggle('hidden'),
+    x: () => section.classList.toggle('hidden'),
   }
 
   const press = (name, down) => keys.get(name)?.classList.toggle('active_key', down)
