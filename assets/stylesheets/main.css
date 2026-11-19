@@ -114,6 +114,157 @@ h2 {
 }
 
 /* ==============================
+   Document Styling
+   ============================== */
+ul {
+  list-style-type: none;
+  max-width: max-content;
+  margin: 0;
+  padding: 0;
+}
+
+ul li::before {
+  content: '•';
+  display: inline-block;
+  width: 1ch;
+  margin-right: 0.5ch;
+}
+
+ul li {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  max-width: 54ch;
+  width: fit-content;
+}
+
+/*
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*/
+
+
+/* ==============================
+   Focus / Navigate
+   —— 焦点即光标：被选中的块整体反色并闪一下
+   ============================== */
+main > .section > * {
+  width: fit-content;
+  max-width: 100%;
+  scroll-margin-block: 5rem 7rem; /* 避开固定导航与键盘区 */
+}
+
+:focus {
+  outline: none;
+  text-decoration: none;
+  color: var(--bg);
+  background: var(--text);
+  animation: flicker 50ms 2;
+}
+
+#nav_form input:focus + .nav_element {
+  animation: flicker 50ms 2;
+}
+
+@keyframes flicker {
+  0%,
+  49% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 无法继续移动时朝对应方向抖一下 */
+.shake {
+  animation: 200ms steps(1, jump-start) shake;
+}
+
+.shake_up {
+  animation: 125ms steps(1, jump-start) shake_up;
+}
+
+.shake_down {
+  animation: 125ms steps(1, jump-start) shake_down;
+}
+
+.shake_left {
+  animation: 125ms steps(1, jump-start) shake_left;
+}
+
+.shake_right {
+  animation: 125ms steps(1, jump-start) shake_right;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(0.125rem, 0.125rem);
+  }
+  67% {
+    transform: translate(-0.125rem, -0.125rem);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes shake_up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake_down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake_left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-0.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake_right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.25rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ==============================
    Fonts
    ============================== */
 @font-face {
