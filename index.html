@@ -19,13 +19,16 @@
           <label class="nav_element" for="nav_lab">02 Lab</label>
         </div>
         <div>
+          <input type="radio" name="nav" id="nav_tools" value="#tools" />
+          <label class="nav_element" for="nav_tools">03 Tools</label>
+        </div>
+        <div>
           <input type="radio" name="nav" id="nav_about" value="#about" />
-          <label class="nav_element" for="nav_about">03 About</label>
+          <label class="nav_element" for="nav_about">04 About</label>
         </div>
       </nav>
     </header>
 
-    <!-- 三个分页：一次只显示一个 -->
     <main>
       <section id="home" class="section is-active">
         <div class="section_body">
@@ -34,29 +37,38 @@
           <div class="br"></div>
           <h1>Home (>_<)</h1>
           <div class="br"></div>
-          <p>Welcome to breeze256.ink</p>
+          <p>Welcome to breeze256.ink!</p>
           <div class="br"></div>
           <div class="br"></div>
           <div class="br"></div>
-          <p>Use keyboard to control website:</p>
+          <p>这是我的个人网站，以后可能会放一些实验性的内容<del>（脑子一抽想出来的东西）</del></p>
+          <p>目前还没啥内容，主要包括：</p>
           <ul>
-            <li>J / K 上下选中元素块</li>
-            <li>H / L 在顶部导航上切换分页</li>
-            <li>1 / 2 / 3 直接跳转</li>
-            <li>M 切换主题</li>
-            <li>X 隐藏键帽</li>
-            <li>+ / - 缩放</li>
+            <li>Lean 交互式环境</li>
+            <li>WebUSB ADB Shell</li>
           </ul>
+          <div class="br"></div>
+          <p>祝浏览愉快！</p>
         </div>
 
         <!-- 右上角的 ASCII glxgears，由 ascii.rest 渲染 -->
         <ascii-art piece="glxgears" class="section_aside"></ascii-art>
       </section>
       <section id="lab" class="section">
+
         <div class="br"></div>
         <h1>Lab</h1>
         <div class="br"></div>
-        <p>这里放一些实验性的东西。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>这里放一些实验性的东西。Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+      </section>
+      <section id="tools" class="section">
+
+        <div class="br"></div>
+        <h1>Tools</h1>
+        <div class="br"></div>
+        <p>这里放一些工具。Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
       </section>
       <section id="about" class="section">
         <div class="br"></div>
@@ -73,6 +85,7 @@
           <kbd data-key="1">1</kbd>
           <kbd data-key="2">2</kbd>
           <kbd data-key="3">3</kbd>
+          <kbd data-key="4">4</kbd>
         </div>
         <p>To section</p>
       </div>

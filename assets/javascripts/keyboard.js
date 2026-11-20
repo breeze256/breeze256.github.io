@@ -132,6 +132,7 @@
     1: () => goToSection(0),
     2: () => goToSection(1),
     3: () => goToSection(2),
+    4: () => goToSection(3),
     // Navigate：hjkl 等价于 ↓ ← ↑ →
     j: () => moveFocus(1),
     arrowdown: () => moveFocus(1),
