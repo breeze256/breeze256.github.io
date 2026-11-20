@@ -45,17 +45,26 @@
   addEventListener('hashchange', () => showSection(location.hash.slice(1)))
 
   // ---- Navigate：把焦点当作“光标”，在元素块之间移动（仿 commitmono）----
+  // 空行占位块（.br）只是排版用，不参与选中
+  const isPlaceholder = (el) => el.classList.contains('br')
+
+  // “块”= 分页的直接子元素；若包了一层 .section_body（用于布局），则取其子元素
+  const blocksOf = (scope) =>
+    [...scope.children]
+      .flatMap((el) =>
+        el.classList.contains('section_body') ? [...el.children] : [el]
+      )
+      .filter((el) => !isPlaceholder(el))
+
   // 每个内容块都变成可获得焦点的元素
-  document
-    .querySelectorAll('main > .section > *')
-    .forEach((el) => (el.tabIndex = 0))
+  sections.forEach((sec) => blocksOf(sec).forEach((el) => (el.tabIndex = 0)))
 
   // 可选中列表 = 当前选中的分页按钮 + 当前分页内的所有块
   const focusables = () => {
+    const current = sections.find((s) => s.classList.contains('is-active'))
     const list = [
-      ...document.querySelectorAll(
-        '#nav_form input:checked, main > .section.is-active > [tabindex]'
-      ),
+      ...document.querySelectorAll('#nav_form input:checked'),
+      ...(current ? blocksOf(current) : []),
     ]
     // 跳过被 display:none 隐藏的块
     return list.filter(

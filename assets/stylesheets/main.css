@@ -15,8 +15,14 @@ body {
   color: var(--text);
   background: var(--bg);
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -25,7 +31,6 @@ html {
 }
 
 main {
-  max-width: 60ch;
   padding: 5rem 4ch 3rem;
 }
 
@@ -36,6 +41,43 @@ main {
 
 .section.is-active {
   display: block;
+}
+
+/* Home：正文在左，ASCII glxgears 居于右上角
+   用 .is-active 提高优先级，否则 #home 会盖掉 .section 的 display:none */
+#home.is-active {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2ch 4ch;
+}
+
+/* 正文这一栏自己再纵向排列，宽度尽量占满左侧 */
+#home .section_body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 30ch;
+  min-width: 0;
+}
+
+/* 右上角的齿轮：靠右对齐，字号缩小以免抢戏 */
+#home .section_aside {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-left: auto;
+  max-width: 100%;
+  font-size: 0.75em;
+  line-height: 1;
+  overflow: hidden;
+}
+
+/* 窄屏就上下叠放，齿轮回到右侧单独一行 */
+@media (max-width: 900px) {
+  #home .section_aside {
+    font-size: 0.6em;
+  }
 }
 
 /* ==============================
@@ -131,10 +173,14 @@ ul li::before {
 }
 
 ul li {
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
   max-width: 54ch;
   width: fit-content;
+}
+
+.br {
+  height: 1rem;
 }
 
 /*
@@ -151,7 +197,8 @@ ul li {
    Focus / Navigate
    —— 焦点即光标：被选中的块整体反色并闪一下
    ============================== */
-main > .section > * {
+main > .section > *,
+.section_body > * {
   width: fit-content;
   max-width: 100%;
   scroll-margin-block: 5rem 7rem; /* 避开固定导航与键盘区 */
