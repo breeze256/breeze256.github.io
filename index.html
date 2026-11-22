@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/stylesheets/main.css" />
-    <title>brz256's Lab</title>
+    <title>01 Home - Windy屿落的小站</title>
   </head>
   <body>
     <!-- Top nav -->
     <header>
-      <nav id="nav_form" aria-label="Main navigation">
+      <nav id="nav_form" class="nav_list" aria-label="Main navigation">
         <div>
           <input type="radio" name="nav" id="nav_home" value="#home" checked />
           <label class="nav_element" for="nav_home">01 Home</label>
@@ -35,9 +35,9 @@
           <div class="br"></div>
           <div class="br"></div>
           <div class="br"></div>
-          <h1>Home (>_<)</h1>
+          <h1>Home</h1>
           <div class="br"></div>
-          <p>Welcome to breeze256.ink!</p>
+          <p>Welcome to breeze256.ink! (￣▽￣)</p>
           <div class="br"></div>
           <div class="br"></div>
           <div class="br"></div>
@@ -63,18 +63,56 @@
 
       </section>
       <section id="tools" class="section">
-
         <div class="br"></div>
         <h1>Tools</h1>
         <div class="br"></div>
-        <p>这里放一些工具。Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="br"></div>
+        <!-- 左侧纵向导航 + 右侧内容：与上方标题分开，各自布局 -->
+        <div class="tools_layout">
+          <!-- 与顶部导航共用 .nav_list 样式 -->
+          <nav id="tools_nav" class="nav_list section_sidebar" aria-label="Tools navigation">
+            <div>
+              <input type="radio" name="tool" id="tool_lean" value="lean" checked />
+              <label class="nav_element" for="tool_lean">Lean Interactive</label>
+            </div>
+            <div>
+              <input type="radio" name="tool" id="tool_adb" value="adb" />
+              <label class="nav_element" for="tool_adb">WebUSB ADB Shell</label>
+            </div>
+            <div>
+              <input type="radio" name="tool" id="tool_conv" value="conv" />
+              <label class="nav_element" for="tool_conv">File Converter</label>
+            </div>
+          </nav>
 
+          <div class="section_body">
+            <div class="tool_panel" data-tool="lean">
+              <h2>Lean Interactive</h2>
+              <div class="br"></div>
+              <p>在浏览器里跑 Lean 的交互式环境。Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+
+            <div class="tool_panel" data-tool="adb" hidden>
+              <h2>WebUSB ADB Shell</h2>
+              <div class="br"></div>
+              <p>Powered by <a href="https://github.com/IsMyPhonePwned/webadb-rs/" target="_blank" rel="noopener noreferrer">IsMyPhonePwned/webadb-rs</a>.</p>
+            </div>
+
+            <div class="tool_panel" data-tool="conv" hidden>
+              <h2>File Converter</h2>
+              <div class="br"></div>
+              <p>用于转换各种文件格式的工具。</p>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="about" class="section">
         <div class="br"></div>
         <h1>About</h1>
         <div class="br"></div>
-        <p>brz256 的个人站点。</p>
+        <p>可以叫我 Windy屿落 或者 breeze256 ^_^</p>
+        <p>我的 GitHub：<a href="https://github.com/breeze256" target="_blank" rel="noopener noreferrer">breeze256</a></p>
       </section>
     </main>
 

@@ -92,11 +92,7 @@ header {
 }
 
 #nav_form {
-  display: flex;
   gap: 4ch;
-  width: max-content;
-  max-width: 100%;
-  overflow-x: auto;
   font-size: 0.8rem;
   line-height: 1.25rem;
   scrollbar-width: none;
@@ -106,8 +102,16 @@ header {
   display: none;
 }
 
+/* 导航列表：顶部导航与 Tools 侧边栏共用 */
+.nav_list {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* 原生 radio 隐藏，仅保留可访问性 */
-#nav_form input[type='radio'] {
+.nav_list input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
   display: block;
@@ -117,29 +121,66 @@ header {
   opacity: 0;
 }
 
-#nav_form .nav_element {
+.nav_list .nav_element {
   display: inline-block;
   padding: 0 0.25ch;
   cursor: pointer;
   user-select: none;
 }
 
-#nav_form input:checked + .nav_element,
-#nav_form input:hover + .nav_element,
-#nav_form input:focus + .nav_element {
+.nav_list input:checked + .nav_element,
+.nav_list input:hover + .nav_element,
+.nav_list input:focus + .nav_element {
   color: var(--bg);
   background: var(--text);
 }
 
-#nav_form .nav_element:active {
+.nav_list .nav_element:active {
   background: var(--text);
   color: var(--bg);
   opacity: 0.75;
 }
 
+/* Tools 左侧纵向导航：竖排，其余样式与顶部导航一致 */
+#tools_nav {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  width: max-content;
+  max-width: 100%;
+  overflow: visible;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+
+/* 每一项铺满整列，反色时是一整条而不是只包住文字 */
+#tools_nav .nav_element {
+  display: block;
+  width: 100%;
+}
+
+/* Tools：上半部是标题与说明（普通纵向排列），下半部才是「导航在左、内容在右」 */
+#tools > .tools_layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2ch 4ch;
+  width: 100%;
+  max-width: 100%;
+}
+
+#tools .section_body {
+  flex: 1 1 40ch;
+  min-width: 0;
+}
+
 /* ==============================
-   Heading
+   Document Styling
    ============================== */
+
+/* Heading */
 
 h1 {
   font-size: 2rem;
@@ -155,9 +196,8 @@ h2 {
   width: fit-content;
 }
 
-/* ==============================
-   Document Styling
-   ============================== */
+/* Unordered List */
+
 ul {
   list-style-type: none;
   max-width: max-content;
@@ -183,20 +223,11 @@ ul li {
   height: 1rem;
 }
 
-/*
-*, ::before, ::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-*/
-
 
 /* ==============================
    Focus / Navigate
-   —— 焦点即光标：被选中的块整体反色并闪一下
    ============================== */
+
 main > .section > *,
 .section_body > * {
   width: fit-content;
@@ -212,7 +243,7 @@ main > .section > *,
   animation: flicker 50ms 2;
 }
 
-#nav_form input:focus + .nav_element {
+.nav_list input:focus + .nav_element {
   animation: flicker 50ms 2;
 }
 

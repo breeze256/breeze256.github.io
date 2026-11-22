@@ -32,7 +32,7 @@
     navInputs[idx].checked = true
     if (location.hash !== `#${sections[idx].id}`) location.hash = sections[idx].id
     scrollTo(0, 0)
-    document.title = `${navInputs[idx].labels[0].textContent} · brz256's Lab`
+    document.title = `${navInputs[idx].labels[0].textContent.replace(/^\d+\s*/, '')} - Windy屿落的小站`
     navInputs[idx].focus({ preventScroll: true })
   }
 
@@ -44,20 +44,58 @@
 
   addEventListener('hashchange', () => showSection(location.hash.slice(1)))
 
+  // ---- Tools：左侧纵向导航切换右侧面板 ----
+  const toolInputs = [
+    ...document.querySelectorAll('#tools_nav input[type="radio"]'),
+  ]
+
+  const showTool = (id) => {
+    toolInputs.forEach((input) => {
+      const panel = document.querySelector(
+        `.tool_panel[data-tool="${input.value}"]`
+      )
+      if (panel) panel.hidden = input.value !== id
+    })
+  }
+
+  toolInputs.forEach((input) =>
+    input.addEventListener('change', () => {
+      showTool(input.value)
+      // 焦点跟上，反色高亮才不会停在未选中的项上
+      input.focus({ preventScroll: true })
+    })
+  )
+  showTool(toolInputs.find((input) => input.checked)?.value)
+
   // ---- Navigate：把焦点当作“光标”，在元素块之间移动（仿 commitmono）----
   // 空行占位块（.br）只是排版用，不参与选中
   const isPlaceholder = (el) => el.classList.contains('br')
 
-  // “块”= 分页的直接子元素；若包了一层 .section_body（用于布局），则取其子元素
-  const blocksOf = (scope) =>
-    [...scope.children]
-      .flatMap((el) =>
-        el.classList.contains('section_body') ? [...el.children] : [el]
-      )
-      .filter((el) => !isPlaceholder(el))
+  // 只用于布局的包裹层：向下展开，不作为一整块被选中
+  const isWrapper = (el) =>
+    el.classList.contains('section_body') ||
+    el.classList.contains('section_sidebar') ||
+    el.classList.contains('tools_layout') ||
+    el.classList.contains('tool_panel')
 
-  // 每个内容块都变成可获得焦点的元素
-  sections.forEach((sec) => blocksOf(sec).forEach((el) => (el.tabIndex = 0)))
+  // “块”= 分页的直接子元素；遇到布局包裹层则向下展开
+  // radio + label 的组合，块就是那个 radio 本身（与顶部导航一致）
+  const blocksOf = (scope) =>
+    [...scope.children].flatMap((el) => {
+      if (isPlaceholder(el)) return []
+      if (isWrapper(el)) return blocksOf(el)
+      const radio = el.matches('input[type="radio"]')
+        ? el
+        : el.querySelector(':scope > input[type="radio"]')
+      return [radio || el]
+    })
+
+  // radio 本身可聚焦，不需要额外 tabIndex
+  sections.forEach((sec) =>
+    blocksOf(sec).forEach((el) => {
+      if (el.nodeName !== 'INPUT') el.tabIndex = 0
+    })
+  )
 
   // 可选中列表 = 当前选中的分页按钮 + 当前分页内的所有块
   const focusables = () => {
@@ -66,9 +104,9 @@
       ...document.querySelectorAll('#nav_form input:checked'),
       ...(current ? blocksOf(current) : []),
     ]
-    // 跳过被 display:none 隐藏的块
-    return list.filter(
-      (el) => el.nodeName === 'INPUT' || el.offsetWidth || el.offsetHeight
+    // 隐藏/未选中的块（display:none 的块、未选中的 radio）跳过
+    return list.filter((el) =>
+      el.nodeName === 'INPUT' ? el.checked : el.offsetWidth || el.offsetHeight
     )
   }
 
@@ -108,16 +146,23 @@
     else shake(list[i], step > 0 ? 'down' : 'up')
   }
 
-  // 横向（h / l、← / →）：在顶部导航上切换分页，在正文里则提示没有横向目标
+  // 横向（h / l、← / →）：在同一组导航里前后切换；在正文里则提示没有横向目标
+  const groupOf = (el) => {
+    if (!el?.matches?.('input[type="radio"]')) return []
+    const nav = el.closest('nav')
+    return nav ? [...nav.querySelectorAll('input[type="radio"]')] : []
+  }
+
   const moveSideways = (step) => {
-    const i = navInputs.indexOf(document.activeElement)
+    const items = groupOf(document.activeElement)
+    const i = items.indexOf(document.activeElement)
     if (i === -1) {
       shake(document.activeElement, step > 0 ? 'right' : 'left')
       return
     }
-    const next = navInputs[i + step]
+    const next = items[i + step]
     if (next) next.click()
-    else shake(navInputs[i], step > 0 ? 'right' : 'left')
+    else shake(items[i], step > 0 ? 'right' : 'left')
   }
 
   // 焦点进入视口时自动滚动到可见位置
@@ -132,6 +177,7 @@
     1: () => goToSection(0),
     2: () => goToSection(1),
     3: () => goToSection(2),
+    4: () => goToSection(3),
     4: () => goToSection(3),
     // Navigate：hjkl 等价于 ↓ ← ↑ →
     j: () => moveFocus(1),
